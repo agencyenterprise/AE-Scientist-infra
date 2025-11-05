@@ -142,18 +142,6 @@ fi
 # =============================================================================
 # Step 5: Run startup command if provided
 # =============================================================================
-if [ -n "${REPO_STARTUP_CMD:-}" ]; then
-  echo ""
-  echo "Step 5: Running startup command..."
-  echo "  Command: ${REPO_STARTUP_CMD}"
-  echo ""
-  echo "========================================"
-  echo ""
-  
-  cd "$REPO_DIR"
-  eval "$REPO_STARTUP_CMD"
-else
-  echo ""
-  echo "✅ Setup complete! Repository ready at: ${REPO_DIR}"
-  echo ""
-fi
+echo ""
+echo "✓ Repository setup complete! Repository ready at: ${REPO_DIR}"
+echo ""
