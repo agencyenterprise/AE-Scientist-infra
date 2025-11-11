@@ -83,7 +83,7 @@ fi
 echo "  Adding public keys to authorized_keys..."
 echo "$PUBLIC_KEY" >> ~/.ssh/authorized_keys
 chmod 700 ~/.ssh/authorized_keys
-service ssh restart
+service ssh start
 echo "  ✓ Public keys added to authorized_keys"
 
 # Set git config
