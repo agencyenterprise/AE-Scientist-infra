@@ -80,11 +80,12 @@ else
 fi
 
 # Add public keys to authorized_keys
-#echo "  Adding public keys to authorized_keys..."
-#echo "$PUBLIC_KEY" >> ~/.ssh/authorized_keys
-#chmod 700 ~/.ssh/authorized_keys
-#service ssh start
-#echo "  ✓ Public keys added to authorized_keys"
+echo "  Adding public keys to authorized_keys..."
+echo "$PUBLIC_KEY" >> ~/.ssh/authorized_keys
+ssh-keygen -A # Generate host keys if they don't exist
+chmod 600 ~/.ssh/authorized_keys
+service ssh start
+echo "  ✓ Public keys added to authorized_keys"
 
 # Set git config
 git config --global user.name "RunPod Worker" 2>/dev/null || true
