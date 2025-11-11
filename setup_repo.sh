@@ -79,6 +79,13 @@ else
   echo "  ✓ SSH config already exists"
 fi
 
+# Add public keys to authorized_keys
+echo "  Adding public keys to authorized_keys..."
+echo "$PUBLIC_KEY" >> ~/.ssh/authorized_keys
+chmod 700 ~/.ssh/authorized_keys
+service ssh restart
+echo "  ✓ Public keys added to authorized_keys"
+
 # Set git config
 git config --global user.name "RunPod Worker" 2>/dev/null || true
 git config --global user.email "runpod@local" 2>/dev/null || true
